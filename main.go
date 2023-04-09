@@ -2,15 +2,17 @@ package main
 
 import (
 	"fmt"
+	"os"
+
 	"github.com/gin-gonic/gin"
+	"go.uber.org/dig"
+
 	"github.com/xuanye/keystone-go/adapter"
 	"github.com/xuanye/keystone-go/application"
 	"github.com/xuanye/keystone-go/common"
 	"github.com/xuanye/keystone-go/common/config"
 	"github.com/xuanye/keystone-go/domain"
 	"github.com/xuanye/keystone-go/infrastructure"
-	"go.uber.org/dig"
-	"os"
 )
 
 func setupEnvironment() *common.HostEnvironment {
@@ -41,8 +43,8 @@ func main() {
 	c := setDependency()
 
 	// 运行容器
-
 	if err := c.Invoke(func(router *gin.Engine, settings *config.Settings) {
+
 		err := router.Run(fmt.Sprintf(":%d", settings.Port))
 		if err != nil {
 			panic(err)
