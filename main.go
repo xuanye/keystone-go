@@ -1,16 +1,20 @@
 package main
 
 import (
+	"os"
 	"fmt"
+	
+	"go.uber.org/dig"
 	"github.com/gin-gonic/gin"
+	
 	"github.com/xuanye/keystone-go/adapter"
 	"github.com/xuanye/keystone-go/application"
 	"github.com/xuanye/keystone-go/common"
 	"github.com/xuanye/keystone-go/common/config"
 	"github.com/xuanye/keystone-go/domain"
 	"github.com/xuanye/keystone-go/infrastructure"
-	"go.uber.org/dig"
-	"os"
+	
+	
 )
 
 func setupEnvironment() *common.HostEnvironment {
