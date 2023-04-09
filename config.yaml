@@ -1,4 +1,5 @@
 # 应用配置
+port: 4011
 app:
   name: Keystone
   version: "1.0.0"

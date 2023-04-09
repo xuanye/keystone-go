@@ -7,6 +7,7 @@ import (
 
 type OrganizationController struct {
 	handler *application.Handler
+	BaseController
 }
 
 func NewOrganizationController(h *application.Handler) Controller {

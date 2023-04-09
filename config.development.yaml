@@ -1,0 +1,21 @@
+# 应用配置
+port: 4011
+app:
+  name: Keystone
+  version: "1.0.0"
+  debug: false
+
+# 数据库配置
+database:
+  dbType: mysql
+  host: localhost
+  port: 3306
+  username: root
+  password: root123
+  database: keystone
+
+# 日志配置
+log:
+  level: debug
+  format: json
+  file: ./logs/app.log

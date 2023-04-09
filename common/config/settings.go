@@ -1,7 +1,8 @@
 package config
 
 type AppSettings struct {
-	Name    string
+	Name string
+
 	Version string
 	Debug   bool
 }
@@ -21,6 +22,7 @@ type LogSettings struct {
 }
 
 type Settings struct {
+	Port     int
 	App      AppSettings
 	Database DatabaseSettings
 	Log      LogSettings

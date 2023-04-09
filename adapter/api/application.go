@@ -7,20 +7,19 @@ import (
 
 type ApplicationController struct {
 	handler *application.Handler
+	BaseController
 }
 
 func NewApplicationController(h *application.Handler) Controller {
 	return &ApplicationController{handler: h}
 }
-func (controller *ApplicationController) Build(g *gin.RouterGroup) {
-	g.GET("/apps", controller.findAll)
+func (c *ApplicationController) Build(g *gin.RouterGroup) {
+	g.GET("/apps", c.findAll)
 }
 
-func (controller *ApplicationController) findAll(ctx *gin.Context) {
+func (c *ApplicationController) findAll(ctx *gin.Context) {
 
-	ctx.JSON(200, gin.H{
-		"code":    0,
-		"message": "",
-		"data":    controller.handler.FindAll(),
-	})
+	data := c.handler.FindAll()
+	c.WithContext(ctx).Ok(data, "")
+
 }
