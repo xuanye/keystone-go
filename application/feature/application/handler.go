@@ -23,7 +23,7 @@ func (h *Handler) FindAll() []dto.DtoApplication {
 			AppName:     app.AppName,
 			AppCode:     app.AppCode,
 			Description: app.Description,
-			OperatedAt:  app.OperatedAt,
+			OperatedAt:  app.OperatedAt.Unix(),
 			OperatedBy:  app.OperatedBy,
 		})
 	}
