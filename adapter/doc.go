@@ -1,0 +1,2 @@
+// Package adapter
+package adapter
